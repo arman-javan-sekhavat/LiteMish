@@ -8,13 +8,13 @@ unsigned long stop  = 0; // Stop  time (microseconds)
 const size_t N = 1000; // Number of scalar calls
 float L[N] = {}; // Array to store random numbers
 
-//------------------------------------------------------------------Constant parameters
+//----------------------------------------------------------------- Constant parameters
 #define x1 -7.422187f
 #define x2 -0.737440f
 #define a -0.0074315f
 #define b +0.7453866f
 
-//-------------------------------------------------------C++ implementation of LiteMish
+//------------------------------------------------------ C++ implementation of LiteMish
 static inline float LiteMish(float x) {
 
     if (x > 0.0f){
@@ -57,7 +57,7 @@ void setup() {
 
   /* 
   Sampling random numbers from a normal distribution
-  and stroing them in L
+  and storing them in L
   */
 
   for(size_t i = 0; i < N; i++){
