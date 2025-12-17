@@ -1,15 +1,15 @@
 # LiteMish
 
-LiteMish is a computationally efficient, smooth, algebraic activation function designed as a lightweight alternative to Mish for deep learning, especially in resource-constrained environments such as TinyML, embedded systems, and robot control. LiteMish achieves performance comparable to Mish while using only addition and multiplication, making it significantly faster and more energy-efficient on low-power hardware.
+LiteMish is a smooth, algebraic activation function designed as a lightweight alternative to Mish, especially for resource-constrained applications such as TinyML, embedded systems, and robot control. LiteMish achieves performance comparable to Mish while using only addition and multiplication, making it significantly faster and more energy-efficient on low-power hardware.
 
 # Motivation
-Modern smooth activation functions (e.g., Mish, Swish, Softplus) offer good learning performance but rely on expensive operations such as exponentials and logarithms. These operations are costly on microcontrollers and embedded CPUs.
+Modern smooth activation functions (e.g., Mish, Swish, Softplus) offer good learning performance but rely on expensive operations such as exponentials and logarithms. These operations are slow on microcontrollers and embedded CPUs.
 
 LiteMish is designed to:
 
 1. Preserve the smooth, non-monotonic behavior of Mish
 1. Eliminate transcendental operations
-1. Enable fast and energy-efficient inference on constrained hardware
+1. Enable fast and energy-efficient inference on resource-constrained hardware
 
 # Key Properties
 
