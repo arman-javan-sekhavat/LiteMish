@@ -21,3 +21,7 @@ LiteMish is:
 1. Purely algebraic (addition and multiplication only)
 1. Piecewise polynomial
 1. Computationally efficient
+
+# LiteMish Graph
+<img width="554" height="432" alt="image" src="https://github.com/user-attachments/assets/bf3c24fc-7ef8-487c-9f73-6266067e23f4" />
+
