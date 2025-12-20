@@ -22,6 +22,9 @@ LiteMish is:
 1. Piecewise polynomial
 1. Computationally efficient
 
+# Mathematical Definition
+<img width="615" height="170" alt="image" src="https://github.com/user-attachments/assets/f6d5abdd-fcab-401f-9c5f-bbf5dba2210f" />
+
 # LiteMish Graph
 <img width="554" height="432" alt="image" src="https://github.com/user-attachments/assets/bf3c24fc-7ef8-487c-9f73-6266067e23f4" />
 
