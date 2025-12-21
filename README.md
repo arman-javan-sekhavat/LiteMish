@@ -29,7 +29,7 @@ LiteMish is:
 <img width="554" height="432" alt="image" src="https://github.com/user-attachments/assets/bf3c24fc-7ef8-487c-9f73-6266067e23f4" />
 
 # LiteMish.cpp
-This file includes code to test the computation time of several activation functions on CPU. The original test was performed using an ESP32 development board and the Arduino IDE. The computation times were accurately measured by using the esp_timer_get_time() function.
+This file includes code to test the computation time of several activation functions on CPU. The original test was performed using an ESP32 development board and the Arduino IDE. The computation times were accurately measured by using the `esp_timer_get_time()` function.
 
 # LiteMish.ipynb
 This notebook includes code for the JAX implementation of LiteMish and optimizing its parameters. It requires the JAX and Matplotlib modules.
