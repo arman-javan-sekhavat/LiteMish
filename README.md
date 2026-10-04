@@ -256,7 +256,7 @@ See [`LiteMish.cpp`](./LiteMish.cpp) and [`LiteMish.ipynb`](./LiteMish.ipynb) fo
 
 **Author:** Arman Javan Sekhavat Pishkhani
 
-📄 **Paper / Preprint:**
+**Paper / Preprint:**
 [TechRxiv](https://doi.org/10.36227/techrxiv.176591866.68698045/v2)
 
 The study investigates the mathematical properties, learning performance, and computational efficiency of LiteMish, including experiments on regression, MNIST, CIFAR-100, and an ESP32 development board.
