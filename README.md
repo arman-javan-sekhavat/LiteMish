@@ -126,35 +126,21 @@ LiteMish achieved **64.59%** accuracy, close to ELU at **64.69%**, while outperf
 
 ## Implementation
 
-### C++
+### TensorFlow
 
-The [`LiteMish.cpp`](./LiteMish.cpp) file contains the C++ implementation used for the ESP32 timing experiment.
+The TensorFlow implementation of LiteMish is:
 
-A minimal implementation is:
+```python
+import tensorflow as tf
 
-```cpp
-#define X1 -7.422187f
-#define X2 -0.737440f
-#define A  -0.0074315f
-#define B   0.7453866f
+x1 = -7.42218730
+x2 = -0.73744017
+a = -0.0074315585222961555
+b = +0.7453866928666856000
 
-static inline float LiteMish(float x) {
-    if (x > 0.0f) {
-        return x;
-    } 
-    else if (x > X2) {
-        return B * x * x + x;
-    } 
-    else if (x > X1) {
-        return A * (x - X1) * (x - X1);
-    } 
-    else {
-        return 0.0f;
-    }
-}
+def LiteMish(x):
+return tf.where(x < x1, 0.0, tf.where(x < x2, a*tf.square(x - x1), tf.where(x < 0.0, b*x*x + x, x)))
 ```
-
-This implementation contains no calls to `exp`, `log`, `tanh`, `sqrt`, or floating-point division.
 
 ### JAX
 
@@ -168,28 +154,42 @@ from jax import jit
 
 x1 = -7.42218730
 x2 = -0.73744017
-
 a = -0.0074315585222961555
-b =  0.7453866928666856000
+b = +0.7453866928666856000
 
 @jit
-def litemish(x):
-    return jnp.where(
-        x < x1,
-        0.0,
-        jnp.where(
-            x < x2,
-            a * jnp.square(x - x1),
-            jnp.where(
-                x < 0.0,
-                b * x * x + x,
-                x
-            )
-        )
-    )
+def LiteMish(x):
+return jnp.where(x < x1, 0.0, jnp.where(x < x2, a*jnp.square(x - x1), jnp.where(x < 0.0, b*x*x + x, x)))
 ```
 
 ---
+
+### C++
+
+The [`LiteMish.cpp`](./LiteMish.cpp) file contains the C++ implementation used for the ESP32 timing experiment.
+
+A minimal implementation is:
+
+```cpp
+#define x1 -7.422187f
+#define x2 -0.737440f
+#define a -0.0074315f
+#define b +0.7453866f
+
+static inline float LiteMish(float x) {
+  if (x > 0.0f){
+    return x;
+  }else if (x > x2){
+    return b*x*x + x;
+  }else if (x > x1){
+    return a*(x-x1)*(x-x1);
+  }else{
+    return 0.0f;
+  }
+}
+```
+
+This implementation contains no calls to `exp`, `log`, `tanh`, `sqrt`, or floating-point division.
 
 ## Quick Example
 
