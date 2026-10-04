@@ -1,9 +1,3 @@
-# LiteMish.cpp
-This file includes code to test the computation time of several activation functions on CPU. The original test was performed using an ESP32 development board and the Arduino IDE. The computation times were accurately measured by using the `esp_timer_get_time()` function.
-
-# LiteMish.ipynb
-This notebook includes code for the JAX implementation of LiteMish and optimizing its parameters. It requires the JAX and Matplotlib modules.
-
 # LiteMish
 
 <p align="center">
@@ -202,7 +196,7 @@ def litemish(x):
 In a neural network, LiteMish can conceptually replace another activation function:
 
 ```python
-activation = litemish
+activation = LiteMish
 ```
 
 For JAX-based experiments:
@@ -212,7 +206,7 @@ import jax.numpy as jnp
 
 x = jnp.array([-10.0, -5.0, -1.0, -0.5, 0.0, 1.0])
 
-y = litemish(x)
+y = LiteMish(x)
 
 print(y)
 ```
@@ -261,7 +255,6 @@ See [`LiteMish.cpp`](./LiteMish.cpp) and [`LiteMish.ipynb`](./LiteMish.ipynb) fo
 **LiteMish: A Computationally Efficient and Smooth Algebraic Alternative to Mish**
 
 **Author:** Arman Javan Sekhavat Pishkhani
-**Affiliation:** University of Tehran
 
 📄 **Paper / Preprint:**
 [TechRxiv](https://doi.org/10.36227/techrxiv.176591866.68698045/v2)
@@ -287,7 +280,7 @@ If LiteMish is useful in your research or project, please cite the accompanying 
 
 ## Applications
 
-LiteMish is especially interesting for environments where computational simplicity matters, including:
+LiteMish is especially beneficial for applications where computational efficiency matters, including:
 
 * TinyML
 * Microcontrollers
